@@ -1,0 +1,225 @@
+/* ===== ESTILOS GERAIS ===== */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #f9e6e6 0%, #f2d1d1 100%);
+  color: #4a2c2c;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ===== CABEÇALHO ===== */
+header {
+  background: linear-gradient(145deg, #8b2c2c 0%, #5c1a1a 100%);
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 15px rgba(139, 44, 44, 0.3);
+  border-bottom: 3px solid #b84c4c;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #dba1a1;
+  box-shadow: 0 2px 4px rgba(92, 26, 26, 0.3);
+}
+
+.header-text {
+  text-align: left;
+}
+
+.header-text h1 {
+  color: white;
+  margin: 0;
+}
+
+.header-text p {
+  color: #f0d6d6;
+  margin: 5px 0 0;
+}
+
+/* ===== BOTÕES ===== */
+button {
+  margin: 5px;
+  padding: 10px 15px;
+  background: linear-gradient(145deg, #b84c4c 0%, #8b2c2c 100%);
+  color: white;
+  border: 1px solid #dba1a1;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(139, 44, 44, 0.3);
+  font-weight: bold;
+}
+
+button:hover {
+  background: linear-gradient(145deg, #9e3a3a 0%, #5c1a1a 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(92, 26, 26, 0.4);
+  border-color: #b84c4c;
+}
+
+/* ===== SEÇÕES DE CONTEÚDO ===== */
+section {
+  max-width: 800px;
+  margin: 20px auto;
+  background: linear-gradient(145deg, #fff9f9 0%, #ffefef 100%);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(139, 44, 44, 0.15);
+  border-left: 4px solid #b84c4c;
+  border-right: 1px solid #dba1a1;
+  border-bottom: 1px solid #dba1a1;
+}
+
+section:hover {
+  box-shadow: 0 6px 20px rgba(139, 44, 44, 0.25);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Títulos das seções */
+h2 {
+  color: #5c1a1a;
+  border-bottom: 2px solid #b84c4c;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+/* Parágrafos */
+section p {
+  color: #4a2c2c;
+  margin: 8px 0;
+}
+
+/* Listas */
+ul {
+  padding-left: 20px;
+  list-style-type: square;
+  color: #4a2c2c;
+}
+
+ul li {
+  margin-bottom: 5px;
+  color: #4a2c2c;
+}
+
+ul li::marker {
+  color: #b84c4c;
+}
+
+/* ===== RODAPÉ ===== */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: linear-gradient(145deg, #5c1a1a 0%, #3a1111 100%);
+  color: white;
+  margin-top: 30px;
+  box-shadow: 0 -4px 15px rgba(92, 26, 26, 0.3);
+  border-top: 2px solid #b84c4c;
+}
+
+footer p {
+  color: #f0d6d6;
+  margin: 0;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  section {
+    margin: 10px;
+    padding: 15px;
+  }
+  
+  button {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
+
+/* ===== MODO ESCURO ===== */
+body.dark-mode {
+  background: linear-gradient(135deg, #2c1a1a 0%, #1f1212 100%);
+  color: #ffefef;
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+  background: linear-gradient(145deg, #3d1a1a 0%, #240f0f 100%);
+  border-color: #b84c4c;
+}
+
+body.dark-mode .header-text h1 {
+  color: #ffefef;
+}
+
+body.dark-mode .header-text p {
+  color: #dba1a1;
+}
+
+body.dark-mode section {
+  background: linear-gradient(145deg, #332121 0%, #291a1a 100%);
+  color: #ffefef;
+  border-left: 4px solid #b84c4c;
+  border-right: 1px solid #5c1a1a;
+  border-bottom: 1px solid #5c1a1a;
+}
+
+body.dark-mode h2 {
+  color: #dba1a1;
+  border-color: #b84c4c;
+}
+
+body.dark-mode section p,
+body.dark-mode ul li {
+  color: #f0d6d6;
+}
+
+body.dark-mode ul li::marker {
+  color: #dba1a1;
+}
+
+body.dark-mode button {
+  background: linear-gradient(145deg, #b84c4c 0%, #8b2c2c 100%);
+  color: white;
+  border-color: #dba1a1;
+}
+
+body.dark-mode button:hover {
+  background: linear-gradient(145deg, #9e3a3a 0%, #5c1a1a 100%);
+  border-color: #b84c4c;
+}
+
+body.dark-mode .profile-img {
+  border-color: #dba1a1;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+body.dark-mode footer p {
+  color: #f0d6d6;
+}
