@@ -12,5 +12,24 @@ document.getElementById('imprimir').addEventListener('click', function() {
   // Aciona a função de impressão nativa do navegador
   // Isso abrirá o diálogo de impressão do sistema operacional
   window.print();
+  // Função para baixar como PDF
+const botaoBaixarPDF = document.getElementById('baixar-pdf');
+const elementoParaPDF = document.getElementById('conteudo-pdf');
+
+if (botaoBaixarPDF && elementoParaPDF) {
+  botaoBaixarPDF.addEventListener('click', () => {
+    // Opções de configuração do PDF
+    const opcoes = {
+      margin: [0.5, 0.5, 0.5, 0.5],
+      filename: 'Curriculo_Maria_Isabely.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2, letterRendering: true },
+      jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+    };
+    
+    // Gerar o PDF
+    html2pdf().set(opcoes).from(elementoParaPDF).save();
+  });
+}
   
 });
