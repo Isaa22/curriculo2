@@ -1,23 +1,25 @@
+// MODO ESCURO
 // Seleciona o botão com ID 'modo-escuro' e adiciona um listener de clique
 document.getElementById('modo-escuro').addEventListener('click', function() {
-  // Alterna a classe 'dark-mode' no elemento body do documento:
-  // - Se a classe existir, será removida
-  // - Se não existir, será adicionada
+  // Alterna a classe 'dark-mode' no elemento body do documento
   document.body.classList.toggle('dark-mode');
-  
 });
 
+// IMPRIMIR
 // Seleciona o botão com ID 'imprimir' e adiciona um listener de clique
 document.getElementById('imprimir').addEventListener('click', function() {
   // Aciona a função de impressão nativa do navegador
-  // Isso abrirá o diálogo de impressão do sistema operacional
   window.print();
-  // Função para baixar como PDF
+});
+
+// BAIXAR PDF
+// Seleciona o botão com ID 'baixar-pdf'
 const botaoBaixarPDF = document.getElementById('baixar-pdf');
 const elementoParaPDF = document.getElementById('conteudo-pdf');
 
+// Verifica se o botão e o elemento existem antes de adicionar o evento
 if (botaoBaixarPDF && elementoParaPDF) {
-  botaoBaixarPDF.addEventListener('click', () => {
+  botaoBaixarPDF.addEventListener('click', function() {
     // Opções de configuração do PDF
     const opcoes = {
       margin: [0.5, 0.5, 0.5, 0.5],
@@ -31,5 +33,3 @@ if (botaoBaixarPDF && elementoParaPDF) {
     html2pdf().set(opcoes).from(elementoParaPDF).save();
   });
 }
-  
-});
