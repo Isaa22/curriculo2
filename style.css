@@ -70,13 +70,13 @@ body.dark-mode footer {
   color: #94a3b8;
 }
 
-body.dark-mode button {
+body.dark-mode .btn {
   background: #334155;
   color: #f1f5f9;
   border-color: #475569;
 }
 
-body.dark-mode button:hover {
+body.dark-mode .btn:hover {
   background: #475569;
 }
 
@@ -108,7 +108,7 @@ header {
   gap: 1.8rem;
 }
 
-/* Avatar com inicial (alternativa à foto) */
+/* Avatar com inicial */
 .avatar-placeholder {
   width: 110px;
   height: 110px;
@@ -159,7 +159,7 @@ header {
   flex-wrap: wrap;
 }
 
-button {
+.btn {
   background: #f0f4f9;
   border: 1px solid #cbdbe2;
   padding: 0.5rem 1.2rem;
@@ -172,10 +172,30 @@ button {
   color: #1f3b4c;
 }
 
-button:hover {
+.btn:hover {
   background: #e2e8f0;
   transform: scale(0.97);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.btn-pdf {
+  background: #c084fc;
+  border-color: #a855f7;
+  color: white;
+}
+
+.btn-pdf:hover {
+  background: #a855f7;
+  transform: scale(0.97);
+}
+
+body.dark-mode .btn-pdf {
+  background: #8b5cf6;
+  border-color: #7c3aed;
+}
+
+body.dark-mode .btn-pdf:hover {
+  background: #7c3aed;
 }
 
 /* SEÇÕES */
@@ -280,43 +300,63 @@ footer {
   border-top: 1px solid #e2edf2;
 }
 
-/* IMPRESSÃO */
+/* IMPRESSÃO E PDF */
 @media print {
   body {
     background: white;
     padding: 0;
     margin: 0;
   }
+  
   .resume-container {
     max-width: 100%;
     margin: 0;
     border-radius: 0;
     box-shadow: none;
   }
-  button, .btn-group {
+  
+  .btn, .btn-group, button {
     display: none !important;
   }
+  
   header {
     break-inside: avoid;
   }
+  
   section {
     break-inside: avoid;
     page-break-inside: avoid;
   }
-  body.dark-mode .resume-container {
-    background: white;
-    color: black;
-  }
-  body.dark-mode section h2 {
-    color: #1e3a5f;
-    border-left-color: #c084fc;
-  }
+  
   .avatar-placeholder {
-    background: #c084fc;
+    background: #c084fc !important;
     border: 2px solid #aaa;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
+  
   .avatar-initial {
-    color: white;
+    color: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  section h2 {
+    border-left-color: #c084fc !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .contact-badge span {
+    background: #eef3fc !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .info-card {
+    background: #fef9f0 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 }
 
@@ -326,27 +366,76 @@ footer {
     flex-direction: column;
     align-items: flex-start;
   }
+  
   .btn-group {
     width: 100%;
     justify-content: flex-start;
   }
+  
   .header-content {
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
   }
+  
   section {
     padding: 1.2rem 1.5rem;
   }
+  
   .header-text h1 {
     font-size: 1.6rem;
   }
+  
   .contact-badge {
     flex-direction: column;
     gap: 0.4rem;
   }
+  
   .contact-badge span {
     display: inline-block;
     width: fit-content;
+  }
+}
+
+/* ANIMAÇÃO DE CARREGAMENTO */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.resume-container {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+/* ESTILO PARA O TOAST DE NOTIFICAÇÃO */
+.pdf-toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #10b981;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
