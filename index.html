@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Currículo | Maria Isabely Soares Carvalho</title>
   <link rel="stylesheet" href="style.css">
+  <!-- html2pdf library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
-  <div class="resume-container">
+  <div class="resume-container" id="resume-content">
     <header>
       <div class="header-content">
         <div class="avatar-placeholder">
@@ -18,28 +20,29 @@
           <div class="contact-badge">
             <span> (43) 99830-6254</span>
             <span> Rio Branco do Ivaí – PR</span>
-            <span>17 anos</span>
+            <span> 17 anos</span>
           </div>
         </div>
       </div>
       <div class="btn-group">
-        <button id="modo-escuro" aria-label="Alternar tema">🌙 Modo Escuro</button>
-        <button id="imprimir" aria-label="Imprimir currículo">🖨️ Imprimir</button>
+        <button id="modo-escuro" class="btn" aria-label="Alternar tema">🌙 Modo Escuro</button>
+        <button id="imprimir" class="btn" aria-label="Imprimir currículo">🖨️ Imprimir</button>
+        <button id="baixar-pdf" class="btn btn-pdf" aria-label="Baixar PDF">📄 Baixar PDF</button>
       </div>
     </header>
 
     <section class="perfil">
-      <h2>Objetivo</h2>
+      <h2>🎯 Objetivo</h2>
       <p>Atuar como auxiliar ou atendente de consultório odontológico, contribuindo com organização, bom atendimento ao público e aprendizado na área da saúde.</p>
     </section>
 
     <section class="formacao">
-      <h2> Formação</h2>
+      <h2>📚 Formação</h2>
       <p><strong>Ensino Médio</strong> – 3º ano (em andamento)</p>
     </section>
 
     <section class="experiencia">
-      <h2>Experiência Profissional</h2>
+      <h2>💼 Experiência Profissional</h2>
       <div class="exp-item">
         <div class="exp-title">Atendente de Padaria</div>
         <div class="exp-period">📅 Período: 3 anos</div>
@@ -54,7 +57,7 @@
     </section>
 
     <section class="habilidades">
-      <h2> Habilidades</h2>
+      <h2>⭐ Habilidades</h2>
       <ul>
         <li>Boa comunicação</li>
         <li>Facilidade com atendimento ao público</li>
@@ -65,7 +68,7 @@
     </section>
 
     <section class="info-adicional-section">
-      <h2> Informações Adicionais</h2>
+      <h2>ℹ️ Informações Adicionais</h2>
       <div class="info-card">
         <p>✓ Disponibilidade para aprender</p>
         <p>✓ Comprometimento com horários e responsabilidades</p>
@@ -76,7 +79,8 @@
       <h2>📬 Contato</h2>
       <p>📞 Telefone: (43) 99830-6254</p>
       <p>📍 Rio Branco do Ivaí – PR</p>
-     </section>
+      <p>📧 Email: maria.isabely@email.com</p>
+    </section>
 
     <footer>
       <p>&copy; 2026 Maria Isabely Soares Carvalho – Todos os direitos reservados</p>
